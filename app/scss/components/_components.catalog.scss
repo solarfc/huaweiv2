@@ -1,0 +1,148 @@
+/*
+    catalog start
+ */
+
+.catalog {
+  padding: 40px 0 78px;
+
+  h3 {
+    margin-bottom: 2px;
+  }
+
+  span.title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    width: calc(100% + 91px);
+    left: -56px;
+    margin-top: 41px;
+
+    &-block {
+      box-sizing: border-box;
+      width: 49%;
+      max-width: 600px;
+      padding: 39px 24px 27px 35px;
+      background: #d5daf1;
+      box-shadow: -5px -5px 10px #d3d8ef, 5px 5px 10px #b1b9d5;
+      border-radius: 10px;
+      position: relative;
+
+      &__info {
+        width: 318px;
+        margin-left: auto;
+
+        img.logo {
+
+        }
+
+        .price {
+          max-width: 100%;
+          margin: -2px 0 14px;
+
+          span {
+
+            &.new-price {
+              display: inline-block;
+            }
+
+            &.old-price {
+              display: inline-block;
+            }
+          }
+        }
+
+        ul {
+
+          li {
+
+            p {
+              font-size: 16px;
+              line-height: 24px;
+
+              span {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                display: inline-block;
+                width: 159px;
+              }
+            }
+          }
+        }
+
+        .images {
+          position: absolute;
+          top: 68px;
+          left: 39px;
+          max-width: 180px;
+
+          .slider {
+
+            figure {
+
+              img {
+                margin: 0;
+              }
+            }
+
+            ul.slick-dots {
+              display: flex;
+              justify-content: center;
+              margin: 4px auto 0;
+
+              li {
+                width: 8px;
+                height: 8px;
+                background: #7f87a3;
+                border-radius: 50%;
+                margin-right: 6px;
+
+                button {
+                  opacity: 0;
+                  padding: 0;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: inherit;
+                }
+
+                &.slick-active {
+                  background: #45bcff;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      form {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 49px 11px 0 0;
+
+        .form-group {
+
+          &.tel {
+            margin: 0;
+          }
+
+          &.order {
+            width: 100%;
+            max-width: 260px;
+            margin: 24px auto 0;
+          }
+        }
+      }
+
+      &.blue, &.black {
+        margin-bottom: 70px;
+      }
+    }
+  }
+}

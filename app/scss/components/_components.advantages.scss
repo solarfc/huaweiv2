@@ -1,0 +1,59 @@
+/*
+    advantages style
+ */
+
+.advantages {
+  padding: 70px 0 51px;
+
+  &__content {
+    box-sizing: border-box;
+    padding: 0 9px 0 11px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-block {
+      width: 46%;
+      max-width: 540px;
+
+      img {
+        border-radius: 10px;
+        box-shadow: -5px -5px 10px #d3d8ef,
+                      5px 5px 10px #b1b9d5;
+        margin: 0;
+      }
+
+      h3 {
+        margin: 23px auto 10px;
+      }
+
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 91px;
+      }
+
+      &:nth-child(3) {
+
+        h3 {
+          margin-top: 55px;
+        }
+      }
+
+      &:nth-child(4) {
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 1132px;
+          height: 637px;
+          background: url("../img/advantages/phone.png") no-repeat center/cover;
+          transform: rotate(41.15deg);
+          position: absolute;
+          top: 273px;
+          left: -407px;
+        }
+      }
+    }
+  }
+}

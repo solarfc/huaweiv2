@@ -1,0 +1,126 @@
+/*
+    header style
+ */
+
+.header {
+  padding: 33px 0 76px;
+
+  &__content {
+    position: relative;
+
+    img.logo {
+
+    }
+
+    span.sale {
+      margin: 37px 0 23px;
+    }
+
+    &-img {
+      position: relative;
+      position: absolute;
+      top: -40px;
+      right: 27px;
+
+      img {
+        width: 100%;
+        margin: 0;
+      }
+
+      .price {
+        position: absolute;
+        top: 291px;
+        left: -91px;
+      }
+
+      .ellipse {
+
+        &.big {
+          width: 400px;
+          height: 400px;
+          top: 57px;
+          left: -145px;
+        }
+
+        &.small {
+          width: 225px;
+          height: 225px;
+          top: 384px;
+          right: 0;
+        }
+      }
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+      }
+
+      &:before {
+        width: 202px;
+        height: 205px;
+        background: url("../img/header/2.png") no-repeat center/cover;
+        top: 275px;
+        left: calc(100% - 57px);
+      }
+
+      &:after {
+        /* скрыть на */
+        width: 97px;
+        height: 98px;
+        background: url("../img/header/3.png") no-repeat center/cover;
+        bottom: -108px;
+        right: 163px;
+      }
+    }
+
+    h1 {
+      max-width: 507px;
+      margin: -7px 0 7px;
+    }
+
+    p.big {
+      max-width: 578px;
+    }
+
+    form {
+      margin-top: 47px;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 68px;
+        height: 66px;
+        background: url("../img/header/4.png") no-repeat center/cover;
+        position: absolute;
+        top: -306px;
+        right: 700px;
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      /* скрыть на */
+      width: 592px;
+      height: 447px;
+      background: url("../img/header/logo.png") no-repeat center/cover;
+      top: 99px;
+      left: -617px;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 42px;
+      height: 41px;
+      background: url("../img/header/1.png") no-repeat center/cover;
+      top: 22px;
+      right: 523px;
+    }
+  }
+}

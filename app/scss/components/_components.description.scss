@@ -1,0 +1,36 @@
+/*
+    description
+ */
+
+.description {
+  padding: 110px 0 67px;
+  position: relative;
+
+  &__content {
+
+    &-top, &-end {
+      width: 50%;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-top {
+      margin-bottom: 810px;
+    }
+
+    &-center {
+      position: absolute;
+      width: 100%;
+      max-width: 1920px;
+      top: 218px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-end {
+      margin-left: auto;
+    }
+  }
+}

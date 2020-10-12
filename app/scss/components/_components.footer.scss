@@ -1,0 +1,78 @@
+/*
+    footer style
+ */
+
+.footer {
+  padding: 54px 0 46px;
+
+  .container {
+    position: relative;
+  }
+
+  &__content {
+    width: 587px;
+    margin-left: auto;
+
+    img.logo {
+
+    }
+
+    span.sale {
+      margin: 34px 0 14px;
+    }
+
+    &-img {
+      width: 53%;
+      max-width: 626px;
+      position: absolute;
+      top: 64px;
+      left: -39px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .price {
+
+      span {
+
+        &.old-price {
+          margin-left: 0;
+        }
+      }
+    }
+
+    h4 {
+      margin: 22px 0 -7px;
+    }
+
+    h2 {
+
+    }
+
+    p.big {
+      margin: 7px auto 47px;
+    }
+
+    form {
+      width: 530px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .form-group {
+
+        &.tel {
+          margin: 0;
+        }
+
+        &.order {
+          width: 100%;
+          max-width: 260px;
+          margin: 21px auto 0;
+        }
+      }
+    }
+  }
+}

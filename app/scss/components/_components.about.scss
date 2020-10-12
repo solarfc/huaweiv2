@@ -1,0 +1,84 @@
+/*
+    about style
+ */
+
+.about {
+  padding: 25px 0 72px;
+
+  &__content {
+    box-sizing: border-box;
+    padding: 0 126px 0 74px;
+    display: flex;
+
+    figure {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        display: block;
+        box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #8145ff;
+        background-blend-mode: soft-light, normal;
+        box-shadow: -5px -5px 10px #d3d8ef, 5px 5px 10px #b1b9d5;
+        border-radius: 50%;
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      p {
+        width: calc(100% - 90px);
+      }
+
+      &:first-child {
+        width: 234px;
+
+        span {
+
+          &:after {
+            width: 40px;
+            height: 34px;
+            background: url("../img/about/camera.png") no-repeat center/cover;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        width: 185px;
+        margin: 0 200px;
+
+        span {
+
+          &:after {
+            width: 25px;
+            height: 39px;
+            background: url("../img/about/battery.png") no-repeat center/cover;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 181px;
+
+        span {
+
+          &:after {
+            width: 24px;
+            height: 40px;
+            background: url("../img/about/phone.png") no-repeat center/cover;
+          }
+        }
+      }
+    }
+  }
+}
