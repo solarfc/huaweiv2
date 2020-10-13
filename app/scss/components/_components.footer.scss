@@ -5,6 +5,10 @@
 .footer {
   padding: 54px 0 46px;
 
+  @include mq(md) {
+    padding: 37px 0 43px;
+  }
+
   .container {
     position: relative;
   }
@@ -12,6 +16,11 @@
   &__content {
     width: 587px;
     margin-left: auto;
+    position: relative;
+
+    @include mq(md) {
+      width: 100%;
+    }
 
     img.logo {
 
@@ -19,17 +28,80 @@
 
     span.sale {
       margin: 34px 0 14px;
+
+      @include mq(s) {
+        margin: 7px 0 20px;
+      }
     }
 
     &-img {
-      width: 53%;
+      width: 107%;
       max-width: 626px;
+      position: relative;
       position: absolute;
       top: 64px;
-      left: -39px;
+      right: calc(100% + 13px);
+
+      @include mq(xl) {
+        right: 92%;
+      }
+
+      @include mq(md) {
+        width: 626px;
+        top: -60px;
+        right: -220px;
+      }
+
+      @include mq(s) {
+        width: 100%;
+        max-width: 626px;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 auto -15%;
+      }
 
       img {
         width: 100%;
+      }
+
+      .ellipse {
+
+        &.small {
+          width: 225px;
+          height: 225px;
+          bottom: 17px;
+          right: 26px;
+        }
+
+        &.big {
+          width: 400px;
+          height: 400px;
+          top: 32px;
+          right: 226px;
+        }
+      }
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+      }
+
+      &:before {
+        width: 97px;
+        height: 98px;
+        background: url("../img/footer/3.png") no-repeat center/cover;
+        top: -52px;
+        right: 379px;
+      }
+
+      &:after {
+        /* показать на s */
+        display: none;
+        width: 116px;
+        height: 123px;
+        background: url("../img/footer/4.png") no-repeat center/cover;
       }
     }
 
@@ -49,30 +121,73 @@
 
     h2 {
 
+      @include mq(md) {
+        max-width: 407px;
+      }
+
+      @include mq(s) {
+        max-width: 100%;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 202px;
+        height: 191px;
+        background: url("../img/footer/5.png") no-repeat center/auto;
+        position: absolute;
+        bottom: -46px;
+        //top: 190px;
+        right: -145px;
+
+        @include mq(md) {
+          bottom: -43px;
+        }
+      }
     }
 
     p.big {
       margin: 7px auto 47px;
+
+      @include mq(md) {
+        max-width: 450px;
+        margin: 7px 0 47px;
+      }
+
+      @include mq(s) {
+        max-width: 100%;
+        margin-bottom: 29px;
+      }
     }
 
     form {
       width: 530px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
 
-      .form-group {
-
-        &.tel {
-          margin: 0;
-        }
-
-        &.order {
-          width: 100%;
-          max-width: 260px;
-          margin: 21px auto 0;
-        }
+      @include mq(md) {
+        margin: 0 auto;
       }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      width: 68px;
+      height: 66px;
+      background: url("../img/footer/1.png") no-repeat center/cover;
+      top: 0;
+      right: 0;
+    }
+
+    &:after {
+      width: 42px;
+      height: 41px;
+      background: url("../img/footer/2.png") no-repeat center/cover;
+      bottom: 95px;
+      left: -439px;
     }
   }
 }

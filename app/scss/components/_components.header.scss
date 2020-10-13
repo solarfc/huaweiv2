@@ -5,15 +5,32 @@
 .header {
   padding: 33px 0 76px;
 
+  @include mq(md) {
+    padding: 20px 0 0;
+  }
+
   &__content {
     position: relative;
 
     img.logo {
 
+      @include mq(xs) {
+        width: 51%;
+        min-width: 150px;
+        max-width: 180px;
+      }
     }
 
     span.sale {
       margin: 37px 0 23px;
+
+      @include mq(s) {
+        margin: 8px 0 -106px;
+      }
+
+      @include mq(xs) {
+        margin-bottom: -11%;
+      }
     }
 
     &-img {
@@ -21,6 +38,25 @@
       position: absolute;
       top: -40px;
       right: 27px;
+
+      @include mq(lg) {
+        right: -75px;
+      }
+
+      @include mq(s) {
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 455px;
+        margin: 0 auto 40px;
+      }
+
+      @include mq(xs) {
+        width: 97%;
+        min-width: 283px;
+        left: 3.8%;
+        margin: 0 0 40px;
+      }
 
       img {
         width: 100%;
@@ -31,15 +67,34 @@
         position: absolute;
         top: 291px;
         left: -91px;
+
+        @include mq(md) {
+          top: 330px;
+          left: -45px;
+        }
+
+        @include mq(s) {
+          width: 143px;
+          top: calc(100% - 10px);
+          left: calc(100% - 141px);
+        }
       }
 
       .ellipse {
+        display: none;
 
         &.big {
           width: 400px;
           height: 400px;
           top: 57px;
           left: -145px;
+
+          @include mq(s) {
+            width: 232px;
+            height: 232px;
+            top: 51px;
+            left: -41px;
+          }
         }
 
         &.small {
@@ -47,6 +102,13 @@
           height: 225px;
           top: 384px;
           right: 0;
+
+          @include mq(s) {
+            width: 186px;
+            height: 186px;
+            top: calc(100% - 103px);
+            right: -68px;
+          }
         }
       }
 
@@ -62,30 +124,114 @@
         background: url("../img/header/2.png") no-repeat center/cover;
         top: 275px;
         left: calc(100% - 57px);
+
+        @include mq(s) {
+          width: 186px;
+          height: 189px;
+          top: 256px;
+          left: -58px;
+        }
       }
 
       &:after {
-        /* скрыть на */
+        /* скрыть на s */
         width: 97px;
         height: 98px;
         background: url("../img/header/3.png") no-repeat center/cover;
         bottom: -108px;
         right: 163px;
+
+        @include mq(s) {
+          display: none;
+        }
       }
     }
 
     h1 {
       max-width: 507px;
       margin: -7px 0 7px;
+
+      @include mq(md) {
+        max-width: 407px;
+      }
+
+      @include mq(s) {
+        max-width: 100%;
+      }
     }
 
     p.big {
-      max-width: 578px;
+      max-width: 595px;
+
+      @include mq(md) {
+        max-width: 450px;
+      }
+
+      @include mq(s) {
+        max-width: 100%;
+      }
     }
 
     form {
+      width: 100%;
+      justify-content: left;
       margin-top: 47px;
       position: relative;
+
+      @include mq(md) {
+        justify-content: space-between;
+      }
+
+      @include mq(s) {
+        max-width: 530px;
+        margin: 29px auto 0;
+        flex-wrap: wrap;
+      }
+
+      @include mq(xs) {
+        width: 260px;
+      }
+
+      .form-group {
+
+        @include mq(md) {
+          width: 32%;
+        }
+
+        @include mq(s) {
+          width: 50%;
+        }
+
+        @include mq(xs) {
+          width: 100%;
+        }
+
+        &.tel {
+          margin: 0 32px 0 10px;
+
+          @include mq(md) {
+            margin: 0;
+          }
+
+          @include mq(xs) {
+            margin: 10px auto 16px;
+          }
+        }
+
+        &.order {
+          margin: 0;
+
+          @include mq(s) {
+            width: 100%;
+            max-width: 260px;
+            margin: 21px auto 0;
+          }
+
+          @include mq(xs) {
+            margin-top: 0;
+          }
+        }
+      }
 
       &:after {
         content: "";
@@ -96,6 +242,22 @@
         position: absolute;
         top: -306px;
         right: 700px;
+
+        @include mq(lg) {
+          right: 500px;
+        }
+
+        @include mq(md) {
+          top: -336px;
+        }
+
+        @include mq(s) {
+          width: 52px;
+          height: 50px;
+          top: -41px;
+          right: -15px;
+          pointer-events: none;
+        }
       }
     }
 
@@ -106,13 +268,17 @@
     }
 
     &:before {
-      /* скрыть на */
+      /* скрыть на lg */
       width: 592px;
       height: 447px;
       background: url("../img/header/logo.png") no-repeat center/cover;
       top: 99px;
       left: -617px;
       z-index: -1;
+
+      @include mq(lg) {
+        display: none;
+      }
     }
 
     &:after {
@@ -121,6 +287,15 @@
       background: url("../img/header/1.png") no-repeat center/cover;
       top: 22px;
       right: 523px;
+
+      @include mq(md) {
+        right: 323px;
+      }
+
+      @include mq(s) {
+        top: 29px;
+        right: 48px;
+      }
     }
   }
 }

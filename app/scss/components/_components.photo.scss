@@ -1,0 +1,31 @@
+/*
+    photo style
+ */
+
+.photo {
+
+  @include mq(md) {
+    padding: 37px 0 57px;
+  }
+
+  &__content {
+
+    &:before {
+      width: 76px;
+      height: 73px;
+      background: url("../img/gallery/2.png") no-repeat center/cover;
+      top: -53px;
+      left: -38px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    &:after {
+      width: 228px;
+      height: 236px;
+      background: url("../img/gallery/3.png") no-repeat center/cover;
+      bottom: -83px;
+      right: -151px;
+    }
+  }
+}

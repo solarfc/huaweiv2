@@ -5,15 +5,54 @@
 .information {
   padding: 153px 0 83px;
 
+  @include mq(md) {
+    padding: 12px 0 77px;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
+
+    .ellipse {
+
+      &.small {
+        width: 174px;
+        height: 174px;
+        top: -34px;
+        right: -131px;
+      }
+
+      &.big {
+        width: 241px;
+        height: 241px;
+        top: 174px;
+        left: -255px;
+      }
+    }
   }
 
   h3 {
     width: 100%;
+    margin-left: 11px;
     margin-bottom: 81px;
+    position: relative;
+
+    @include mq(md) {
+      margin-bottom: 37px;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 116px;
+      height: 117px;
+      background: url("../img/information.png") no-repeat center/cover;
+      position: absolute;
+      top: -156px;
+      left: 328px;
+    }
   }
 
   .review, .delivery {
@@ -23,6 +62,16 @@
 
   .review {
     padding: 0 81px 0 11px;
+
+    @include mq(lg) {
+      padding-right: 31px;
+    }
+
+    @include mq(md) {
+      width: 100%;
+      padding-right: 11px;
+      margin-bottom: 68px;
+    }
 
     .slider {
       box-sizing: border-box;
@@ -34,6 +83,12 @@
 
           p {
             margin-bottom: 9px;
+
+            @include mq(xs) {
+              font-size: 18px;
+              line-height: 23px;
+              margin-bottom: 2px;
+            }
           }
 
           span {
@@ -90,13 +145,37 @@
     padding: 0 43px 0 53px;
     margin-top: 2px;
 
+    @include mq(lg) {
+      padding: 0 20px;
+    }
+
+    @include mq(md) {
+      width: 100%;
+      padding: 0;
+    }
+
     &__content {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
 
+      @include mq(s) {
+        align-items: baseline;
+      }
+
       figure {
         width: 202px;
+
+        @include mq(md) {
+          width: 24%;
+        }
+
+        @include mq(s) {
+          width: 48%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 
         span {
           display: block;
@@ -108,6 +187,14 @@
           border-radius: 50%;
           position: relative;
           margin-bottom: 13px;
+
+          @include mq(md) {
+            margin: 0 auto 13px;
+          }
+
+          @include mq(s) {
+            margin: 0;
+          }
 
           &:after {
             content: "";
@@ -126,10 +213,26 @@
 
         p {
 
+          @include mq(md) {
+            text-align: center;
+          }
+
+          @include mq(s) {
+            width: calc(100% - 90px);
+            text-align: left;
+          }
         }
 
         &:first-child {
           margin-bottom: 94px;
+
+          @include mq(md) {
+            margin-bottom: 0;
+          }
+
+          @include mq(s) {
+            margin-bottom: 40px;
+          }
 
           span {
 

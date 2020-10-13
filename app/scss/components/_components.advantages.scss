@@ -5,6 +5,10 @@
 .advantages {
   padding: 70px 0 51px;
 
+  @include mq(md) {
+    padding: 29px 0 42px;
+  }
+
   &__content {
     box-sizing: border-box;
     padding: 0 9px 0 11px;
@@ -16,33 +20,96 @@
     &-block {
       width: 46%;
       max-width: 540px;
+      position: relative;
+
+      @include mq(xs) {
+        width: 100%;
+        max-width: 100%;
+      }
 
       img {
         border-radius: 10px;
         box-shadow: -5px -5px 10px #d3d8ef,
                       5px 5px 10px #b1b9d5;
         margin: 0;
+
+        @include mq(lg) {
+          width: 100%;
+          max-width: 540px;
+        }
       }
 
       h3 {
         margin: 23px auto 10px;
+
+        @include mq(s) {
+          margin: 15px auto 5px;
+        }
       }
 
       &:nth-child(1), &:nth-child(2) {
         margin-bottom: 91px;
+
+        @include mq(md) {
+          margin-bottom: 78px;
+        }
+      }
+
+      &:nth-child(1) {
+
+        @include mq(xs) {
+          margin-bottom: 51px;
+        }
+
+        .ellipse {
+          width: 241px;
+          height: 241px;
+          top: 239px;
+          left: -283px;
+        }
+      }
+
+      &:nth-child(2) {
+
+        @include mq(xs) {
+          margin-bottom: 78px;
+        }
+
+        .ellipse {
+          width: 364px;
+          height: 364px;
+          top: -83px;
+          right: -259px;
+        }
       }
 
       &:nth-child(3) {
 
+        @include mq(xs) {
+          margin-bottom: 29px;
+        }
+
         h3 {
           margin-top: 55px;
+
+          @include mq(s) {
+            margin-top: 41px;
+          }
         }
       }
 
       &:nth-child(4) {
         position: relative;
 
+        .ellipse {
+          width: 495px;
+          height: 495px;
+          top: 196px;
+          right: 296px;
+        }
+
         &:after {
+          /* скрыть на md */
           content: "";
           display: block;
           width: 1132px;
@@ -52,6 +119,15 @@
           position: absolute;
           top: 273px;
           left: -407px;
+
+          @include mq(lg) {
+            top: 203px;
+            right: -357px;
+          }
+
+          @include mq(md) {
+            display: none;
+          }
         }
       }
     }

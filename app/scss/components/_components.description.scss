@@ -6,10 +6,20 @@
   padding: 110px 0 67px;
   position: relative;
 
+  @include mq(md) {
+    padding: 32px 0 39px;
+  }
+
   &__content {
 
-    &-top, &-end {
+    &-top, &-bottom {
       width: 50%;
+
+      @include mq(md) {
+        width: 100%;
+        position: relative;
+        z-index: 11;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -17,20 +27,74 @@
     }
 
     &-top {
-      margin-bottom: 810px;
+
     }
 
     &-center {
-      position: absolute;
-      width: 100%;
-      max-width: 1920px;
-      top: 218px;
+      position: relative;
+      width: 1920px;
       left: 50%;
       transform: translateX(-50%);
+      margin: -69px 0 -30px;
+
+      @include mq(xl) {
+        width: 1600px;
+      }
+
+      @include mq(lg) {
+        width: 1199px;
+      }
+
+      @include mq(md) {
+        width: 980px;
+        margin: 0;
+      }
+
+      @include mq(s) {
+        width: 768px;
+        margin: 52px 0 38px;
+      }
+
+      @include mq(xs) {
+        width: 172%;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .ellipse {
+
+        &.big {
+          width: 671px;
+          height: 671px;
+          top: 208px;
+          left: 225px;
+
+          @include mq(md) {
+            display: none;
+          }
+        }
+
+        &.small {
+          width: 276px;
+          height: 276px;
+          top: -51px;
+          right: 301px;
+        }
+      }
     }
 
-    &-end {
+    &-bottom {
       margin-left: auto;
+      position: relative;
+
+      .ellipse {
+        width: 206px;
+        height: 206px;
+        top: -186px;
+        right: -162px;
+      }
     }
   }
 }

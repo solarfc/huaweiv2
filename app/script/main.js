@@ -5,6 +5,27 @@ console.log(`width ${myWidth} \n height ${myHeight}`);
 window.onload = function () {
 
     /*
+        increase date
+     */
+
+    let today = new Date(),
+        tomorrow = new Date(),
+        day,
+        month,
+        year,
+        i = 3,
+        period = document.querySelectorAll('span output');
+
+    tomorrow.setDate(today.getDate() + i);
+    day = (tomorrow.getDate() > 9) ? tomorrow.getDate() : `0${tomorrow.getDate()}`;
+    month = (tomorrow.getMonth() + 1 > 9) ? tomorrow.getMonth() + 1 : `0${tomorrow.getMonth() + 1}`;
+    year = tomorrow.getFullYear().toString().slice(2);
+
+    for(let i = 0; i < period.length; i++) {
+        period[i].innerHTML = `${day}.${month}.${year}`;
+    }
+
+    /*
         loop fancybox
      */
 
@@ -17,8 +38,7 @@ window.onload = function () {
     const sliderSettings = {
         slidesToScroll: 1,
         slidesToShow: 1,
-        speed: 500,
-        fade: true,
+        speed: 300,
         cssEase: 'linear',
         dots: '',
         arrow: '',
@@ -26,10 +46,19 @@ window.onload = function () {
         nextArrow: ''
     };
 
-    $('.catalog__content-block.blue .catalog__content-block__info .images .slider').slick(sliderSettings, sliderSettings.dots = true, sliderSettings.arrow = false);
-    $('.catalog__content-block.black .catalog__content-block__info .images .slider').slick(sliderSettings, sliderSettings.dots = true, sliderSettings.arrow = false);
-    $('.catalog__content-block.white .catalog__content-block__info .images .slider').slick(sliderSettings, sliderSettings.dots = true, sliderSettings.arrow = false);
-    $('.catalog__content-block.silver .catalog__content-block__info .images .slider').slick(sliderSettings, sliderSettings.dots = true, sliderSettings.arrow = false);
+    /*
+        catalog slider
+     */
+
+    const bluePhone = $('.catalog__content-block.blue .catalog__content-block__info .images .slider'),
+        blackPhone = $('.catalog__content-block.black .catalog__content-block__info .images .slider'),
+        whitePhone = $('.catalog__content-block.white .catalog__content-block__info .images .slider'),
+        silverPhone = $('.catalog__content-block.silver .catalog__content-block__info .images .slider'),
+        catalogSlider = [bluePhone, blackPhone, whitePhone, silverPhone];
+
+    for(let i = 0; i < catalogSlider.length; i++) {
+        catalogSlider[i].slick(sliderSettings, sliderSettings.dots = true, sliderSettings.arrow = false);
+    }
 
     /*
         review slider

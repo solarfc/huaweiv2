@@ -1,0 +1,25 @@
+/*
+    gallery style
+ */
+
+.gallery {
+
+  @include mq(md) {
+    padding: 17px 0 62px;
+  }
+
+  &__content {
+
+    &:before {
+      width: 226px;
+      height: 228px;
+      background: url("../img/gallery/1.png") no-repeat center/cover;
+      bottom: -85px;
+      left: -131px;
+    }
+
+    &:after {
+      content: none;
+    }
+  }
+}
