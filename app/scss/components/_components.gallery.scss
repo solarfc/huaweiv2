@@ -16,6 +16,19 @@
       background: url("../img/gallery/1.png") no-repeat center/cover;
       bottom: -85px;
       left: -131px;
+
+      @include mq(xxl) {
+        bottom: -160px;
+        left: -80px;
+        pointer-events: none;
+      }
+
+      @include mq(xl) {
+        width: 67px;
+        height: 69px;
+        bottom: -60px;
+        left: -10px;
+      }
     }
 
     &:after {

@@ -17,6 +17,10 @@
     justify-content: space-between;
     align-items: flex-start;
 
+    @include mq(lg) {
+      padding: 0;
+    }
+
     &-block {
       width: 46%;
       max-width: 540px;
@@ -32,6 +36,7 @@
         box-shadow: -5px -5px 10px #d3d8ef,
                       5px 5px 10px #b1b9d5;
         margin: 0;
+        position: relative;
 
         @include mq(lg) {
           width: 100%;
@@ -61,11 +66,25 @@
           margin-bottom: 51px;
         }
 
-        .ellipse {
-          width: 241px;
-          height: 241px;
-          top: 239px;
-          left: -283px;
+        h3 {
+
+          @include mq(xl) {
+            position: relative;
+          }
+
+          span.ellipse {
+            width: 241px;
+            height: 241px;
+            top: 239px;
+            left: -283px;
+
+            @include mq(xl) {
+              width: 139px;
+              height: 139px;
+              top: -81px;
+              left: calc(100% - 125px);
+            }
+          }
         }
       }
 
@@ -75,11 +94,25 @@
           margin-bottom: 78px;
         }
 
-        .ellipse {
-          width: 364px;
-          height: 364px;
-          top: -83px;
-          right: -259px;
+        h3 {
+
+          @include mq(xl) {
+            position: relative;
+          }
+
+          span.ellipse {
+            width: 364px;
+            height: 364px;
+            top: -83px;
+            right: -259px;
+
+            @include mq(xl) {
+              width: 242px;
+              height: 242px;
+              top: 37px;
+              left: -104px;
+            }
+          }
         }
       }
 
@@ -106,6 +139,13 @@
           height: 495px;
           top: 196px;
           right: 296px;
+
+          @include mq(md) {
+            width: 278px;
+            height: 278px;
+            top: -61px;
+            right: -106px;
+          }
         }
 
         &:after {

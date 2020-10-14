@@ -72,7 +72,10 @@
           left: 225px;
 
           @include mq(md) {
-            display: none;
+            width: 175px;
+            height: 175px;
+            top: 55px;
+            left: 59px;
           }
         }
 
@@ -81,6 +84,13 @@
           height: 276px;
           top: -51px;
           right: 301px;
+
+          @include mq(md) {
+            width: 72px;
+            height: 72px;
+            top: -13px;
+            right: 79px;
+          }
         }
       }
     }
@@ -94,6 +104,13 @@
         height: 206px;
         top: -186px;
         right: -162px;
+
+        @include mq(md) {
+          width: 54px;
+          height: 54px;
+          top: -94px;
+          right: -54px;
+        }
       }
     }
   }

@@ -24,6 +24,11 @@
 
     img.logo {
 
+      @include mq(xs) {
+        width: 51%;
+        min-width: 150px;
+        max-width: 180px;
+      }
     }
 
     span.sale {
@@ -61,6 +66,13 @@
         margin: 0 auto -15%;
       }
 
+      @include mq(xs) {
+        width: 112%;
+        min-width: 327px;
+        left: -5%;
+        margin: 0 0 -15%;
+      }
+
       img {
         width: 100%;
       }
@@ -72,6 +84,13 @@
           height: 225px;
           bottom: 17px;
           right: 26px;
+
+          @include mq(s) {
+            width: 146px;
+            height: 146px;
+            bottom: 32px;
+            left: 1px;
+          }
         }
 
         &.big {
@@ -79,6 +98,13 @@
           height: 400px;
           top: 32px;
           right: 226px;
+
+          @include mq(s) {
+            width: 277px;
+            height: 277px;
+            top: -7px;
+            right: -5px;
+          }
         }
       }
 
@@ -94,6 +120,10 @@
         background: url("../img/footer/3.png") no-repeat center/cover;
         top: -52px;
         right: 379px;
+
+        @include mq(lg) {
+          right: 10px;
+        }
       }
 
       &:after {
@@ -102,6 +132,13 @@
         width: 116px;
         height: 123px;
         background: url("../img/footer/4.png") no-repeat center/cover;
+
+        @include mq(s) {
+          display: block;
+          top: 51px;
+          right: 17px;
+          z-index: -1;
+        }
       }
     }
 
@@ -117,6 +154,10 @@
 
     h4 {
       margin: 22px 0 -7px;
+
+      @include mq(s) {
+        margin: 28px auto 2px;
+      }
     }
 
     h2 {
@@ -127,6 +168,7 @@
 
       @include mq(s) {
         max-width: 100%;
+        position: relative;
       }
 
       &:before {
@@ -142,6 +184,15 @@
 
         @include mq(md) {
           bottom: -43px;
+          right: 18px;
+        }
+
+        @include mq(s) {
+          width: 131px;
+          height: 139px;
+          top: -49px;
+          right: -12px;
+          z-index: -1;
         }
       }
     }
@@ -166,6 +217,27 @@
       @include mq(md) {
         margin: 0 auto;
       }
+
+      @include mq(xs) {
+        width: 260px;
+      }
+
+      .form-group {
+
+        &.tel {
+
+          @include mq(xs) {
+            margin: 10px auto 16px;
+          }
+        }
+
+        &.order {
+
+          @include mq(xs) {
+            margin: 0 auto;
+          }
+        }
+      }
     }
 
     &:before, &:after {
@@ -180,6 +252,13 @@
       background: url("../img/footer/1.png") no-repeat center/cover;
       top: 0;
       right: 0;
+
+      @include mq(md) {
+        width: 52px;
+        height: 52px;
+        top: -37px;
+        right: 28px;
+      }
     }
 
     &:after {
@@ -188,6 +267,15 @@
       background: url("../img/footer/2.png") no-repeat center/cover;
       bottom: 95px;
       left: -439px;
+
+      @include mq(lg) {
+        left: -339px;
+      }
+
+      @include mq(md) {
+        bottom: -36px;
+        left: -5px;
+      }
     }
   }
 }

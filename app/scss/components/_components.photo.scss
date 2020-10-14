@@ -18,6 +18,18 @@
       left: -38px;
       z-index: 1;
       pointer-events: none;
+
+      @include mq(xxl) {
+        left: 0;
+      }
+
+      @include mq(md) {
+        width: 60px;
+        height: 57px;
+        top: -57px;
+        left: calc(50% - 8px);
+        transform: translateX(-50%);
+      }
     }
 
     &:after {
@@ -26,6 +38,18 @@
       background: url("../img/gallery/3.png") no-repeat center/cover;
       bottom: -83px;
       right: -151px;
+
+      @include mq(xl) {
+        bottom: -153px;
+        right: -51px;
+      }
+
+      @include mq(md) {
+        width: 78px;
+        height: 81px;
+        bottom: -67px;
+        left: -10px;
+      }
     }
   }
 }

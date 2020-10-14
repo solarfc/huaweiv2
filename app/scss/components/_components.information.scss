@@ -22,6 +22,15 @@
         height: 174px;
         top: -34px;
         right: -131px;
+
+        @include mq(lg) {
+          right: 0;
+        }
+
+        @include mq(md) {
+          top: calc(100% - 123px);
+          right: -46px;
+        }
       }
 
       &.big {
@@ -29,6 +38,18 @@
         height: 241px;
         top: 174px;
         left: -255px;
+
+        @include mq(xl) {
+          top: 0;
+          left: 0;
+        }
+
+        @include mq(md) {
+          width: 138px;
+          height: 138px;
+          top: -21px;
+          left: calc(100% - 111px);
+        }
       }
     }
   }
@@ -43,7 +64,12 @@
       margin-bottom: 37px;
     }
 
+    @include mq(s) {
+      margin-left: 0;
+    }
+
     &:before {
+      /* скрыть на xs */
       content: "";
       display: block;
       width: 116px;
@@ -52,6 +78,10 @@
       position: absolute;
       top: -156px;
       left: 328px;
+
+      @include mq(xs) {
+        display: none;
+      }
     }
   }
 
@@ -71,6 +101,10 @@
       width: 100%;
       padding-right: 11px;
       margin-bottom: 68px;
+    }
+
+    @include mq(s) {
+      padding: 0;
     }
 
     .slider {
@@ -177,6 +211,11 @@
           align-items: center;
         }
 
+        @include mq(xs) {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+
         span {
           display: block;
           width: 80px;
@@ -221,6 +260,11 @@
             width: calc(100% - 90px);
             text-align: left;
           }
+
+          @include mq(xs) {
+            font-size: 18px;
+            line-height: 23px;
+          }
         }
 
         &:first-child {
@@ -263,6 +307,10 @@
         }
 
         &:last-child {
+
+          @include mq(xs) {
+            margin-bottom: 0;
+          }
 
           span {
 

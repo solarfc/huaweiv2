@@ -140,8 +140,19 @@
       bottom: -84px;
       right: 100%;
 
+      @include mq(xl) {
+        right: 93%;
+      }
+
       @include mq(lg) {
         right: 0;
+      }
+
+      @include mq(md) {
+        width: 89px;
+        height: 90px;
+        bottom: -52px;
+        right: -16px;
       }
     }
   }

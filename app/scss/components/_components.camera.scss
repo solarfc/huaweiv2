@@ -113,6 +113,11 @@
           right: 185px;
         }
 
+        @include mq(xs) {
+          width: 417px;
+          right: 107px;
+        }
+
         //@include mq(xl) {
         //  right: -84px;
         //}
@@ -136,6 +141,11 @@
           text-align: right;
           position: relative;
 
+          @include mq(xs) {
+            font-size: 18px;
+            line-height: 23px;
+          }
+
           &:after {
             content: "";
             display: block;
@@ -144,6 +154,10 @@
             position: absolute;
             top: 0;
             right: -15px;
+
+            @include mq(xs) {
+              right: -5px;
+            }
           }
 
           &:first-of-type {
@@ -153,11 +167,19 @@
               margin-right: 105px;
             }
 
+            @include mq(xs) {
+              margin-right: 50px;
+            }
+
             &:after {
               height: 224px;
 
               @include mq(s) {
                 height: 210px;
+              }
+
+              @include mq(xs) {
+                height: 224px;
               }
             }
           }
@@ -169,11 +191,20 @@
               margin-right: 180px;
             }
 
+            @include mq(xs) {
+              margin: 41px 92px 54px 124px;
+            }
+
             &:after {
               height: 132px;
 
               @include mq(s) {
                 height: 118px;
+              }
+
+              @include mq(xs) {
+                height: 132px;
+                top: 28px;
               }
             }
           }
@@ -186,11 +217,20 @@
               margin-bottom: -32px;
             }
 
+            @include mq(xs) {
+              margin: 0 130px -6px 100px;
+            }
+
             &:after {
               height: 31px;
 
-              @include mq(xs) {
+              @include mq(s) {
                 height: 17px;
+              }
+
+              @include mq(xs) {
+                height: 31px;
+                top: 29px;
               }
             }
           }
@@ -200,18 +240,28 @@
           width: 100%;
         }
 
-        //.ellipse {
-        //  width: 360px;
-        //  height: 360px;
-        //  top: 447px;
-        //  left: calc(100% + 132px);
-        //}
-        //
-        //&:before, &:after {
-        //  content: "";
-        //  display: block;
-        //  position: absolute;
-        //}
+        .ellipse {
+          width: 360px;
+          height: 360px;
+          top: 447px;
+          left: calc(100% + 132px);
+
+          @include mq(lg) {
+            top: -26px;
+            left: 44px;
+          }
+
+          @include mq(md) {
+            width: 237px;
+            height: 237px;
+          }
+        }
+
+        &:before, &:after {
+          content: "";
+          display: block;
+          position: absolute;
+        }
 
         &:before {
           width: 67px;
@@ -219,6 +269,26 @@
           background: url("../img/camera/1.png") no-repeat center/cover;
           top: 693px;
           left: calc(100% + 562px);
+
+          @include mq(xl) {
+            left: 100%;
+          }
+
+          @include mq(lg) {
+            top: 0;
+            left: 107px;
+          }
+
+          @include mq(md) {
+            left: 207px;
+          }
+
+          @include mq(xs) {
+            width: 28px;
+            height: 27px;
+            top: -5px;
+            left: 107px;
+          }
         }
 
         &:after {
@@ -229,6 +299,13 @@
           right: 426px;
 
           @include mq(lg) {
+            bottom: -104px;
+            right: 17px;
+          }
+
+          @include mq(xs) {
+            width: 114px;
+            height: 117px;
             bottom: -52px;
           }
         }

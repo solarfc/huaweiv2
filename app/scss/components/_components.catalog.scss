@@ -22,6 +22,18 @@
       position: absolute;
       top: 35px;
       right: -175px;
+
+      @include mq(xxl) {
+        top: 0;
+        right: 0;
+      }
+
+      @include mq(md) {
+        width: 51px;
+        height: 52px;
+        top: 32px;
+        right: 16px;
+      }
     }
   }
 
@@ -221,7 +233,10 @@
           }
 
           &.tel {
-            margin: 10px auto 16px;
+
+            @include mq(md) {
+              margin: 10px auto 16px;
+            }
           }
 
           &.order {
@@ -232,6 +247,10 @@
             }
 
             @include mq(md) {
+              margin: 0 auto;
+            }
+
+            button {
               margin: 0 auto;
             }
           }
@@ -311,6 +330,10 @@
 
     .ellipse {
 
+      @include mq(xl) {
+        display: none;
+      }
+
       &.small {
         width: 360px;
         height: 360px;
@@ -335,6 +358,13 @@
       position: absolute;
       bottom: 196px;
       right: calc(100% - 81px);
+
+      @include mq(xl) {
+        width: 148px;
+        height: 148px;
+        bottom: -110px;
+        right: -49px;
+      }
     }
   }
 }

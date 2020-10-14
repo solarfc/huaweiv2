@@ -2,7 +2,54 @@ let myWidth = window.innerWidth,
     myHeight = window.innerHeight;
 console.log(`width ${myWidth} \n height ${myHeight}`);
 
+document.querySelector('html').style.overflowY = 'hidden';
+
 window.onload = function () {
+
+    setTimeout(function () {
+        document.querySelector('.loader').style.display = 'none';
+        document.querySelector('html').style.overflowY = 'scroll';
+    }, 1000);
+
+    /*
+        animate
+     */
+
+    let fade = [
+        $('a.bucket'), $('.about__content figure'),
+        $('.description__content-top h3'), $('.description__content-top p'),
+        $('.description__content-center img'),
+        $('.description__content-bottom h3'), $('.description__content-bottom p'),
+        $('.camera__content-video'),
+        $('.camera__content-text h3'), $('.camera__content-text p'),
+        $('.gallery__content a'),
+        $('.catalog h3'), $('.catalog span.title'),
+        $('.catalog__content-block.blue'), $('.catalog__content-block.black'),
+        $('.catalog__content-block.white'), $('.catalog__content-block.silver'),
+        $('.photo__content a'),
+        $('.advantages__content-block'),
+        $('.information h3'),
+        $('.review'),
+        $('.delivery__content figure')
+
+    ];
+
+    for(let i = 0; i < fade.length; i++) {
+        fade[i].waypoint(
+            function (direction) {
+                if(direction === 'down') {
+                    $(this.element).addClass('animated');
+                    this.destroy();
+                }
+            },
+            {
+                offset: function () {
+                    return this.context.innerHeight() * 0.82;
+                }
+            }
+        );
+    }
+
 
     /*
         increase date
@@ -65,13 +112,61 @@ window.onload = function () {
      */
 
     $('.review .slider').slick(sliderSettings, sliderSettings.dots = false, sliderSettings.arrow = true, sliderSettings.prevArrow = $('.prev-arrow'), sliderSettings.nextArrow = $('.next-arrow'));
-    // /*
-    //     change href on mobile
-    //  */
-    //
-    // if(/iPhone|iPod|Android/i.test(navigator.userAgent)){
-    //     document.querySelector('a.grande').href = '#formgrande';
-    //     document.querySelector('a.lake').href = '#formlake';
-    //     document.querySelector('a.lou').href = '#formlou';
-    // }
+
+    /*
+        hide bucket
+     */
+
+    const toggleBucket = () => {
+        let bucket = document.querySelector('a.bucket'),
+            topOfWindow = window.pageYOffset + innerHeight,
+            aboutTopPosition = document.querySelector('.about').offsetTop,
+            catalogTopPosition = document.querySelector('.catalog').offsetTop,
+            photoTopPosition = document.querySelector('.photo').offsetTop,
+            footerTopPosition = document.querySelector('.footer').offsetTop;
+
+        if(topOfWindow < aboutTopPosition && topOfWindow > footerTopPosition) {
+            bucket.classList.remove('animated');
+            bucket.style.zIndex = '-5';
+        } else if (topOfWindow > catalogTopPosition && topOfWindow < photoTopPosition) {
+            bucket.classList.remove('animated');
+            bucket.style.zIndex = '-5';
+        } else {
+            bucket.classList.add('animated');
+            bucket.style.zIndex = '15';
+        }
+    };
+
+    /*
+        slow scroll
+     */
+
+    const slowScroll = (href) => {
+        $('a.bucket').on('click', function () {
+            $('html, body').animate({scrollTop: href}, 800);
+            return false;
+        });
+    }
+
+    /*
+        change href on mobile
+     */
+
+    if(/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)){
+        let href = $('#mobile-order').offset().top - innerHeight;
+
+        slowScroll(href);
+
+        window.addEventListener('scroll', function () {
+            toggleBucket();
+        });
+
+        window.addEventListener('resize', function () {
+            toggleBucket();
+        });
+    } else {
+        let href = document.getElementById('catalog').offsetTop;
+
+        slowScroll(href);
+    }
 };

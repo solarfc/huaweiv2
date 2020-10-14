@@ -81,7 +81,6 @@
       }
 
       .ellipse {
-        display: none;
 
         &.big {
           width: 400px;
@@ -89,7 +88,7 @@
           top: 57px;
           left: -145px;
 
-          @include mq(s) {
+          @include mq(md) {
             width: 232px;
             height: 232px;
             top: 51px;
@@ -103,7 +102,7 @@
           top: 384px;
           right: 0;
 
-          @include mq(s) {
+          @include mq(md) {
             width: 186px;
             height: 186px;
             top: calc(100% - 103px);
@@ -125,23 +124,33 @@
         top: 275px;
         left: calc(100% - 57px);
 
-        @include mq(s) {
+        @include mq(lg) {
+          display: none;
+        }
+
+        @include mq(md) {
+          display: block;
           width: 186px;
           height: 189px;
-          top: 256px;
+          top: 375px;
+          left: 60%;
+        }
+
+        @include mq(s) {
+          top: calc(100% - 85px);
           left: -58px;
         }
       }
 
       &:after {
-        /* скрыть на s */
+        /* скрыть на md */
         width: 97px;
         height: 98px;
         background: url("../img/header/3.png") no-repeat center/cover;
         bottom: -108px;
         right: 163px;
 
-        @include mq(s) {
+        @include mq(md) {
           display: none;
         }
       }
@@ -268,7 +277,7 @@
     }
 
     &:before {
-      /* скрыть на lg */
+      /* скрыть на xl */
       width: 592px;
       height: 447px;
       background: url("../img/header/logo.png") no-repeat center/cover;
@@ -276,7 +285,7 @@
       left: -617px;
       z-index: -1;
 
-      @include mq(lg) {
+      @include mq(xl) {
         display: none;
       }
     }
