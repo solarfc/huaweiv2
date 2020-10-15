@@ -82,7 +82,7 @@
         &.small {
           width: 225px;
           height: 225px;
-          bottom: 17px;
+          bottom: 45px;
           right: 26px;
 
           @include mq(s) {
@@ -179,7 +179,6 @@
         background: url("../img/footer/5.png") no-repeat center/auto;
         position: absolute;
         bottom: -46px;
-        //top: 190px;
         right: -145px;
 
         @include mq(md) {
@@ -213,6 +212,7 @@
 
     form {
       width: 530px;
+      justify-content: space-between;
 
       @include mq(md) {
         margin: 0 auto;

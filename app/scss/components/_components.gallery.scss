@@ -10,29 +10,57 @@
 
   &__content {
 
-    &:before {
-      width: 226px;
-      height: 228px;
-      background: url("../img/gallery/1.png") no-repeat center/cover;
-      bottom: -85px;
-      left: -131px;
+    a {
 
-      @include mq(xxl) {
-        bottom: -160px;
-        left: -80px;
-        pointer-events: none;
+      &:nth-child(5) {
+
+        &:before {
+          content: "";
+          display: block;
+          width: 226px;
+          height: 228px;
+          background: url("../img/gallery/1.png") no-repeat center/cover;
+          position: absolute;
+          bottom: -85px;
+          left: -131px;
+          z-index: -1;
+
+          @include mq(xxl) {
+            bottom: -160px;
+            left: -80px;
+            pointer-events: none;
+          }
+
+          @include mq(xl) {
+            width: 67px;
+            height: 69px;
+            bottom: -60px;
+            left: -10px;
+          }
+
+          @include mq(s) {
+            display: none;
+          }
+        }
       }
 
-      @include mq(xl) {
-        width: 67px;
-        height: 69px;
-        bottom: -60px;
-        left: -10px;
-      }
-    }
+      &:nth-child(7) {
 
-    &:after {
-      content: none;
+        &:before {
+          content: "";
+          display: none;
+          width: 67px;
+          height: 69px;
+          background: url("../img/gallery/1.png") no-repeat center/cover;
+          position: absolute;
+          bottom: -60px;
+          left: -10px;
+
+          @include mq(s) {
+            display: block;
+          }
+        }
+      }
     }
   }
 }

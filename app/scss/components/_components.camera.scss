@@ -21,7 +21,6 @@
       box-shadow: -5px -5px 10px #d3d8ef,
                     5px 5px 10px #b1b9d5;
       border-radius: 10px;
-      //margin-bottom: 383.5px;
 
       @include mq(xl) {
         width: 600px;
@@ -43,6 +42,10 @@
         border-radius: inherit;
       }
 
+      iframe {
+        z-index: 20;
+      }
+
       .video-play {
         width: 81px;
         height: 79px;
@@ -55,12 +58,21 @@
         left: 50%;
         transform: translate(-50%, -50%);
         pointer-events: none;
+        transition: all 0.55s ease-in-out;
 
         @include mq(xs) {
           width: 35px;
           height: 34px;
         }
       }
+
+      &:hover {
+
+        .video-play {
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+      }
+
     }
 
     &-text {
@@ -92,9 +104,6 @@
       figure {
         order: 1;
         position: relative;
-        //position: absolute;
-        //top: -673px;
-        //right: -64px;
         width: 1080px;
         right: 416px;
         pointer-events: none;
@@ -117,24 +126,6 @@
           width: 417px;
           right: 107px;
         }
-
-        //@include mq(xl) {
-        //  right: -84px;
-        //}
-        //
-        //@include mq(lg) {
-        //  position: relative;
-        //  top: 0;
-        //  right: 64px;
-        //}
-        //
-        //@include mq(md) {
-        //  right: 45%;
-        //}
-        //
-        //@include mq(s) {
-        //  right: 80%;
-        //}
 
         h4 {
           color: #4a506a;

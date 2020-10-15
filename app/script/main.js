@@ -11,45 +11,6 @@ window.onload = function () {
         document.querySelector('html').style.overflowY = 'scroll';
     }, 1000);
 
-    /*
-        animate
-     */
-
-    let fade = [
-        $('a.bucket'), $('.about__content figure'),
-        $('.description__content-top h3'), $('.description__content-top p'),
-        $('.description__content-center img'),
-        $('.description__content-bottom h3'), $('.description__content-bottom p'),
-        $('.camera__content-video'),
-        $('.camera__content-text h3'), $('.camera__content-text p'),
-        $('.gallery__content a'),
-        $('.catalog h3'), $('.catalog span.title'),
-        $('.catalog__content-block.blue'), $('.catalog__content-block.black'),
-        $('.catalog__content-block.white'), $('.catalog__content-block.silver'),
-        $('.photo__content a'),
-        $('.advantages__content-block'),
-        $('.information h3'),
-        $('.review'),
-        $('.delivery__content figure')
-
-    ];
-
-    for(let i = 0; i < fade.length; i++) {
-        fade[i].waypoint(
-            function (direction) {
-                if(direction === 'down') {
-                    $(this.element).addClass('animated');
-                    this.destroy();
-                }
-            },
-            {
-                offset: function () {
-                    return this.context.innerHeight() * 0.82;
-                }
-            }
-        );
-    }
-
 
     /*
         increase date
@@ -125,15 +86,19 @@ window.onload = function () {
             photoTopPosition = document.querySelector('.photo').offsetTop,
             footerTopPosition = document.querySelector('.footer').offsetTop;
 
-        if(topOfWindow < aboutTopPosition && topOfWindow > footerTopPosition) {
-            bucket.classList.remove('animated');
+        if(topOfWindow < aboutTopPosition) {
+            bucket.style.opacity = '0';
             bucket.style.zIndex = '-5';
         } else if (topOfWindow > catalogTopPosition && topOfWindow < photoTopPosition) {
-            bucket.classList.remove('animated');
+            bucket.style.opacity = '0';
+            bucket.style.zIndex = '-5';
+
+        } else if(topOfWindow > footerTopPosition) {
+            bucket.style.opacity = '0';
             bucket.style.zIndex = '-5';
         } else {
-            bucket.classList.add('animated');
-            bucket.style.zIndex = '15';
+            bucket.style.opacity = '1';
+            bucket.style.zIndex = '25';
         }
     };
 
@@ -153,7 +118,10 @@ window.onload = function () {
      */
 
     if(/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)){
-        let href = $('#mobile-order').offset().top - innerHeight;
+        let href1 = $('#mobile-order').offset().top;
+        let href2 = $('#mobileorder').offset().top;
+
+        let href = (href2 > href1) ? href2 - innerHeight : href1;
 
         slowScroll(href);
 
@@ -165,7 +133,7 @@ window.onload = function () {
             toggleBucket();
         });
     } else {
-        let href = document.getElementById('catalog').offsetTop;
+        let href = $('#catalog').offset().top;
 
         slowScroll(href);
     }
